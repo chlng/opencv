@@ -84,6 +84,12 @@
 #endif
 #if defined(WIN32) || defined(HAVE_IO_H)
 #include <io.h>
+#ifndef O_TEMPORARY
+#define O_TEMPORARY   0x0040  // temporary file bit (file is deleted when last handle is closed)
+#endif //O_TEMPORARY
+#ifndef _O_SHORT_LIVED
+#define _O_SHORT_LIVED 0x1000  // temporary storage file, try not to flush
+#endif //_O_SHORT_LIVED
 #endif
 
 #include "jasper/jas_types.h"
