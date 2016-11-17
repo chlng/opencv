@@ -78,7 +78,7 @@
 #include <string.h>
 #include <limits.h>
 #include <errno.h>
-#if !defined _WIN32 || defined __MINGW__ || defined __MINGW32__
+#if !defined _WIN32 || defined __MINGW__ || defined __MINGW32__ || defined __BORLANDC__
 #include <stdint.h>
 #endif
 
