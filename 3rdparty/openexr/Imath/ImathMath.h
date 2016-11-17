@@ -123,28 +123,28 @@ struct Math
 template <>
 struct Math<float>
 {
-   static float	acos  (float x)			{return ::acosf (x);}
-   static float	asin  (float x)			{return ::asinf (x);}
-   static float	atan  (float x)			{return ::atanf (x);}
+   static float	acos  (float x)			{return std::acosf (x);}
+   static float	asin  (float x)			{return std::asinf (x);}
+   static float	atan  (float x)			{return std::atanf (x);}
    static float	atan2 (float x, float y)	{return ::atan2f (x, y);}
    static float	cos   (float x)			{return ::cosf (x);}
    static float	sin   (float x)			{return ::sinf (x);}
    static float	tan   (float x)			{return ::tanf (x);}
-   static float	cosh  (float x)			{return ::coshf (x);}
-   static float	sinh  (float x)			{return ::sinhf (x);}
-   static float	tanh  (float x)			{return ::tanhf (x);}
+   static float	cosh  (float x)			{return std::coshf (x);}
+   static float	sinh  (float x)			{return std::sinhf (x);}
+   static float	tanh  (float x)			{return std::tanhf (x);}
    static float	exp   (float x)			{return ::expf (x);}
    static float	log   (float x)			{return ::logf (x);}
-   static float	log10 (float x)			{return ::log10f (x);}
-   static float	modf  (float x, float *y)	{return ::modff (x, y);}
+   static float	log10 (float x)			{return std::log10f (x);}
+   static float	modf  (float x, float *y)	{return std::modff (x, y);}
    static float	pow   (float x, float y)	{return ::powf (x, y);}
    static float	sqrt  (float x)			{return ::sqrtf (x);}
    static float	ceil  (float x)			{return ::ceilf (x);}
-   static float	fabs  (float x)			{return ::fabsf (x);}
+   static float	fabs  (float x)			{return std::fabsf (x);}
    static float	floor (float x)			{return ::floorf (x);}
-   static float	fmod  (float x, float y)	{return ::fmodf (x, y);}
+   static float	fmod  (float x, float y)	{return std::fmodf (x, y);}
 #if !defined(_MSC_VER)
-   static float	hypot (float x, float y)	{return ::hypotf (x, y);}
+   static float	hypot (float x, float y)	{return std::hypotf (x, y);}
 #else
    static float hypot (float x, float y)	{return ::sqrtf(x*x + y*y);}
 #endif
