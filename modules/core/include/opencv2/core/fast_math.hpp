@@ -54,7 +54,7 @@
 *                                      fast math                                         *
 \****************************************************************************************/
 
-#if defined __BORLANDC__
+#if defined __BORLANDC__ && !defined __clang__
 #  include <fastmath.h>
 #elif defined __cplusplus
 #  include <cmath>
