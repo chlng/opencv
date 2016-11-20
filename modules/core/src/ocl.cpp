@@ -46,7 +46,11 @@
 #include <sstream>
 #include <iostream> // std::cerr
 #if !(defined _MSC_VER) || (defined _MSC_VER && _MSC_VER > 1700)
+#ifdef __BCPLUSPLUS__
+#include <stdint.h>
+#else
 #include <inttypes.h>
+#endif
 #endif
 
 #define CV_OPENCL_ALWAYS_SHOW_BUILD_LOG 0
