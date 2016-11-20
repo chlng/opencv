@@ -59,6 +59,8 @@
 #include "ImathMatrix.h"
 
 #include <iostream>
+#include <stdlib.h>
+#include <algorithm> // for std::min()
 
 namespace Imath {
 
