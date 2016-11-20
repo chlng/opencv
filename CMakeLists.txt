@@ -6,7 +6,9 @@
 #
 # ----------------------------------------------------------------------------
 
-
+if(CMAKE_GENERATOR MATCHES "Borland Makefiles")
+  add_definitions(-D__NO_ICV_REDEF__)
+endif()
 
 include(cmake/OpenCVMinDepVersions.cmake)
 
