@@ -7,7 +7,25 @@ project(${WEBP_LIBRARY})
 ocv_include_directories(${CMAKE_CURRENT_SOURCE_DIR})
 ocv_include_directories("${CMAKE_CURRENT_SOURCE_DIR}/cpu-features")
 
-file(GLOB lib_srcs dec/*.c dsp/*.c enc/*.c mux/*.c utils/*.c webp/*.c)
+
+if(CMAKE_GENERATOR MATCHES "Borland Makefiles")
+  #work around an issue in TLIB https://quality.embarcadero.com/browse/RSP-16378
+  configure_file(dec/alpha.c dec/dec_alpha.c)
+  configure_file(dec/buffer.c dec/dec_buffer.c)
+  configure_file(dec/frame.c dec/dec_frame.c)
+  configure_file(dec/idec.c dec/dec_idec.c)
+  configure_file(dec/io.c dec/dec_io.c)
+  configure_file(dec/layer.c dec/dec_layer.c)
+  configure_file(dec/quant.c dec/dec_quant.c)
+  configure_file(dec/tree.c dec/dec_tree.c)
+  configure_file(dec/vp8.c dec/dec_vp8.c)
+  configure_file(dec/vp8l.c dec/dec_vp8l.c)
+  configure_file(dec/webp.c dec/dec_webp.c)
+
+  file(GLOB lib_srcs dec/dec_*.c dsp/*.c enc/*.c mux/*.c utils/*.c webp/*.c)
+else()
+  file(GLOB lib_srcs dec/*.c dsp/*.c enc/*.c mux/*.c utils/*.c webp/*.c)
+endif()
 file(GLOB lib_hdrs dec/*.h dsp/*.h enc/*.h mux/*.h utils/*.h webp/*.h)
 
 # FIXIT
