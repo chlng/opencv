@@ -108,14 +108,14 @@ Thanks to:
 #include <vector>
 
 //Include Directshow stuff here so we don't worry about needing all the h files.
-#if defined _MSC_VER && _MSC_VER >= 1500
+#if defined _MSC_VER && _MSC_VER >= 1500 || __BCPLUSPLUS__
 #  include "DShow.h"
 #  include "strmif.h"
 #  include "Aviriff.h"
 #  include "dvdmedia.h"
 #  include "bdaiface.h"
 #else
-#  ifdef _MSC_VER
+#  ifdef _MSC_VER || __BCPLUSPLUS__
 #  define __extension__
    typedef BOOL WINBOOL;
 #endif
